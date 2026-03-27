@@ -1,7 +1,8 @@
 import { Hono } from "hono";
-3;
+import user from "./login";
 
-const app = new Hono();
+export const app = new Hono();
+app.route("/", user);
 
 app.get("/", (c) => {
   return c.text("Hello Hono!");
